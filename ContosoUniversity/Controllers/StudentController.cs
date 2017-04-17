@@ -68,31 +68,18 @@ namespace ContosoUniversity.Controllers
                 
 
         // GET: Student/Edit/5
-        [HttpPost, ActionName("Edit")]
-        [ValidateAntiForgeryToken]
-        public ActionResult EditPost(int? id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var studentToUpdate = db.Students.Find(id);            
-            if (TryUpdateModel(studentToUpdate, "",
-                new string[] {  "LastName", "FirstMidName", "EnrollmentDate"}))
+            Student student = db.Students.Find(id);
+            if (student == null)
             {
-                try
-                {
-                    db.SaveChanges();
-
-                    return RedirectToAction("Index");
-                }
-                catch (DataException /* dex */)
-                {
-                    //Log the error (uncomment dex variable name and add a line here to write a log.
-                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
-                }
+                return HttpNotFound();
             }
-            return View(studentToUpdate);
+            return View(student);
         }
 
         // POST: Student/Edit/5
@@ -111,13 +98,17 @@ namespace ContosoUniversity.Controllers
         }
 
         // GET: Student/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int? id, bool? saveChangesError=false)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.Students.Find(id);
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ViewBag.ErrorMessage = "Delete failed. Try again, and if the problem persists see your system administrator.";
+            }          
+                Student student = db.Students.Find(id);
             if (student == null)
             {
                 return HttpNotFound();
