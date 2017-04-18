@@ -161,32 +161,16 @@
     <Compile Include="DAL\SchoolConfiguration.cs" />
     <Compile Include="DAL\SchoolInterceptorLogging.cs" />
     <Compile Include="DAL\SchoolInterceptorTransientErrors.cs" />
-    <Compile Include="DAL\SchoollInitializer.cs" />
+    <Compile Include="DAL\SchoolInitializer.cs" />
     <Compile Include="DAL\SchoolContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Logging\Logger.cs" />
-    <Compile Include="Migrations\201704171558496_InitialCreate.cs" />
-    <Compile Include="Migrations\201704171558496_InitialCreate.Designer.cs">
-      <DependentUpon>201704171558496_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704171712235_MaxLengthOnNames.cs" />
-    <Compile Include="Migrations\201704171712235_MaxLengthOnNames.Designer.cs">
-      <DependentUpon>201704171712235_MaxLengthOnNames.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704171800023_ColumnFirstName.cs" />
-    <Compile Include="Migrations\201704171800023_ColumnFirstName.Designer.cs">
-      <DependentUpon>201704171800023_ColumnFirstName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704171849049_ComplexDataModel.cs" />
-    <Compile Include="Migrations\201704171849049_ComplexDataModel.Designer.cs">
-      <DependentUpon>201704171849049_ComplexDataModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704180053420_DepartmentSP.cs" />
-    <Compile Include="Migrations\201704180053420_DepartmentSP.Designer.cs">
-      <DependentUpon>201704180053420_DepartmentSP.cs</DependentUpon>
+    <Compile Include="Migrations\201704181656059_First.cs" />
+    <Compile Include="Migrations\201704181656059_First.Designer.cs">
+      <DependentUpon>201704181656059_First.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
@@ -194,6 +178,7 @@
     <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\Instructor.cs" />
     <Compile Include="Models\OfficeAssignments.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AssignedCourseData.cs" />
@@ -280,20 +265,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704171558496_InitialCreate.resx">
-      <DependentUpon>201704171558496_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704171712235_MaxLengthOnNames.resx">
-      <DependentUpon>201704171712235_MaxLengthOnNames.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704171800023_ColumnFirstName.resx">
-      <DependentUpon>201704171800023_ColumnFirstName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704171849049_ComplexDataModel.resx">
-      <DependentUpon>201704171849049_ComplexDataModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704180053420_DepartmentSP.resx">
-      <DependentUpon>201704180053420_DepartmentSP.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704181656059_First.resx">
+      <DependentUpon>201704181656059_First.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
